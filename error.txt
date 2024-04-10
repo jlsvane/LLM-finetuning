@@ -1,0 +1,15 @@
+Failure # 1 (occurred at 2024-04-10_23-20-23)
+[36mray::_Inner.train()[39m (pid=51932, ip=10.0.0.239, actor_id=611c6557b9de718adf8b301f01000000, repr=TorchTrainer)
+  File "/home/novelty/miniconda3/envs/ray210/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 334, in train
+    raise skipped from exception_cause(skipped)
+  File "/home/novelty/miniconda3/envs/ray210/lib/python3.10/site-packages/ray/train/_internal/utils.py", line 53, in check_for_failure
+    ray.get(object_ref)
+ray.exceptions.RayTaskError(ValueError): [36mray::_RayTrainWorker__execute.get_next()[39m (pid=52020, ip=10.0.0.239, actor_id=7f924392b295b6026928943c01000000, repr=<ray.train._internal.worker_group.RayTrainWorker object at 0x7f86d2317ee0>)
+  File "/home/novelty/miniconda3/envs/ray210/lib/python3.10/site-packages/ray/train/_internal/worker_group.py", line 33, in __execute
+    raise skipped from exception_cause(skipped)
+  File "/home/novelty/miniconda3/envs/ray210/lib/python3.10/site-packages/ray/train/_internal/utils.py", line 169, in discard_return_wrapper
+    train_func(*args, **kwargs)
+  File "/tmp/ipykernel_49334/1469602992.py", line 122, in train_func
+  File "/home/novelty/miniconda3/envs/ray210/lib/python3.10/site-packages/transformers/trainer.py", line 514, in __init__
+    raise ValueError("train_dataset does not implement __len__, max_steps has to be specified")
+ValueError: train_dataset does not implement __len__, max_steps has to be specified
